@@ -41,7 +41,34 @@ class DBManager:
 
     def get_connection(self):
         if self._pool:
-            return self._pool.getconn()
+            try:
+                conn = self._pool.getconn()
+                if conn.closed:
+                    raise psycopg2.OperationalError("Connection is closed.")
+                # Quick liveness check
+                with conn.cursor() as cur:
+                    cur.execute("SELECT 1;")
+                return conn
+            except Exception:
+                logger.warning("Stale or closed database connection detected. Re-initializing connection pool...")
+                try:
+                    self._init_pool()
+                    conn = self._pool.getconn()
+                    with conn.cursor() as cur:
+                        cur.execute("SELECT 1;")
+                    return conn
+                except Exception as ex:
+                    logger.error(f"Failed to refresh connection pool: {ex}")
+                    # Direct fallback connection
+                    return psycopg2.connect(
+                        host=self.db_cfg.get("host"),
+                        port=self.db_cfg.get("port", 5432),
+                        dbname=self.db_cfg.get("dbname"),
+                        user=self.db_cfg.get("user"),
+                        password=self.db_cfg.get("password"),
+                        sslmode=self.db_cfg.get("sslmode", "prefer"),
+                        connect_timeout=10
+                    )
         return psycopg2.connect(
             host=self.db_cfg.get("host"),
             port=self.db_cfg.get("port", 5432),
@@ -51,6 +78,7 @@ class DBManager:
             sslmode=self.db_cfg.get("sslmode", "prefer"),
             connect_timeout=10
         )
+
 
     def release_connection(self, conn):
         if self._pool and conn:
