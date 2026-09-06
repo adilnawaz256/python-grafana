@@ -1,0 +1,18 @@
+# Exclude sensitive configuration files containing DB credentials
+config.yaml
+*.env
+.env
+
+# Exclude python cache & bytecode
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Exclude local OS files
+.DS_Store
+
+# Exclude local sample exports & scratch files
+sample_10_records.csv
+sample_10_records.json
+cron.log

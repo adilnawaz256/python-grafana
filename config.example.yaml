@@ -1,0 +1,34 @@
+# PostgreSQL Database Credentials (Template)
+database:
+  host: "your-rds-endpoint.amazonaws.com"
+  port: 5432
+  dbname: "postgres"
+  user: "postgres"
+  password: "YOUR_DB_PASSWORD"
+  sslmode: "prefer"
+  schema: "public"
+
+# Cron Schedule & Generator Settings
+scheduler:
+  # Execution mode: "interval" (run every X seconds) or "cron" (use cron expression)
+  mode: "interval"
+  
+  # Interval in seconds (e.g., 900 for 15 minutes, 60 for 1 minute)
+  interval_seconds: 900
+
+  # Standard 5-field Cron Expression (used if mode is "cron")
+  # Example: "*/15 * * * *" runs every 15 minutes
+  cron_expression: "*/15 * * * *"
+
+  # Number of rows to generate and push per scheduled run
+  batch_size: 1
+
+# Target tables to push generated data into
+target_tables:
+  - "data_sample"
+
+# Data generation customization rules
+generator_settings:
+  advance_timestamp_from_latest: true
+  timestamp_step_seconds: 900
+  noise_factor: 0.05

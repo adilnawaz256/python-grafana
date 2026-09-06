@@ -1,0 +1,474 @@
+[
+  {
+    "domain": "Transport",
+    "category": "Performance",
+    "name": "Latency",
+    "definition": "End-to-end transport latency",
+    "upper_limit": "<30ms",
+    "lower_limit": "30-50ms"
+  },
+  {
+    "domain": "Transport",
+    "category": "Performance",
+    "name": "Packet Loss",
+    "definition": "Packet loss ratio across links",
+    "upper_limit": "<0.1%",
+    "lower_limit": "0.1-0.3%"
+  },
+  {
+    "domain": "Transport",
+    "category": "Availability",
+    "name": "Links Down",
+    "definition": "Total transport links down",
+    "upper_limit": "0",
+    "lower_limit": "1-3"
+  },
+  {
+    "domain": "Transport",
+    "category": "Performance",
+    "name": "Transport Jitter",
+    "definition": "Variation in packet delay across backhaul",
+    "upper_limit": "<5 ms",
+    "lower_limit": "5\u201310"
+  },
+  {
+    "domain": "Transport",
+    "category": "Performance",
+    "name": "Transport Packet Loss",
+    "definition": "Packet loss ratio across transport links",
+    "upper_limit": "<0.1%",
+    "lower_limit": "0.1\u20130.3"
+  },
+  {
+    "domain": "Transport",
+    "category": "Availability",
+    "name": "Backhaul Availability",
+    "definition": "Availability of transport/backhaul connectivity",
+    "upper_limit": "\u226599.9%",
+    "lower_limit": "99.5\u201399.9"
+  },
+  {
+    "domain": "SMSC",
+    "category": "Traffic",
+    "name": "SMSC Traffic",
+    "definition": "Total SMS volume handled by SMSC (MO+MT)",
+    "upper_limit": "Within capacity",
+    "lower_limit": "High but stable"
+  },
+  {
+    "domain": "SMSC",
+    "category": "Resources",
+    "name": "SMSC Resource Usage",
+    "definition": "Overall resource utilization health indicator for SMSC platform",
+    "upper_limit": "Healthy",
+    "lower_limit": "Warning"
+  },
+  {
+    "domain": "SMSC",
+    "category": "Accessibility",
+    "name": "SMS Submission Success Rate",
+    "definition": "Rate of successful SMS submissions to SMSC vs attempts",
+    "upper_limit": "\u226599%",
+    "lower_limit": "97\u201399%"
+  },
+  {
+    "domain": "SMSC",
+    "category": "Availability",
+    "name": "SMSC Availability",
+    "definition": "Availability",
+    "upper_limit": "\u226599%",
+    "lower_limit": "97\u201399%"
+  },
+  {
+    "domain": "RAN",
+    "category": "VoLTE",
+    "name": "VoLTE CSSR",
+    "definition": "VoLTE Call Setup Success Rate (successful SIP INVITE sessions vs attempts)",
+    "upper_limit": ">=99%",
+    "lower_limit": "97-99%"
+  },
+  {
+    "domain": "RAN",
+    "category": "VoLTE",
+    "name": "VoLTE Drop Rate",
+    "definition": "VoLTE call abnormal termination ratio",
+    "upper_limit": "<0.8%",
+    "lower_limit": "0.8-1.5%"
+  },
+  {
+    "domain": "RAN",
+    "category": "Accessibility",
+    "name": "RRC Success Rate",
+    "definition": "Successful RRC connections vs attempts",
+    "upper_limit": ">=99%",
+    "lower_limit": "97-99%"
+  },
+  {
+    "domain": "RAN",
+    "category": "Accessibility",
+    "name": "E-RAB Success Rate",
+    "definition": "Successful E-RAB establishments vs attempts",
+    "upper_limit": ">=99%",
+    "lower_limit": "97-99%"
+  },
+  {
+    "domain": "RAN",
+    "category": "Availability",
+    "name": "Availability",
+    "definition": "RAN Availability",
+    "upper_limit": ">=99.9%",
+    "lower_limit": "97-99%"
+  },
+  {
+    "domain": "RAN",
+    "category": "Accessibility",
+    "name": "S1 Success Rate",
+    "definition": "Successful S1 signaling procedures vs attempts",
+    "upper_limit": ">=99%",
+    "lower_limit": "97-99%"
+  },
+  {
+    "domain": "RAN",
+    "category": "Alarms",
+    "name": "RAN Active Alarms",
+    "definition": "Total active RAN alarms (Critical+Major)",
+    "upper_limit": "0 Critical",
+    "lower_limit": "1-5 Major"
+  },
+  {
+    "domain": "RAN",
+    "category": "Availability",
+    "name": "Site Down",
+    "definition": "Number of RAN sites currently down",
+    "upper_limit": "0",
+    "lower_limit": "1-2"
+  },
+  {
+    "domain": "RAN",
+    "category": "Mobility",
+    "name": "Intra-LTE HO Success Rate",
+    "definition": "Successful handovers vsntra frequency",
+    "upper_limit": ">=98%",
+    "lower_limit": "95-98%"
+  },
+  {
+    "domain": "RAN",
+    "category": "Retainability",
+    "name": "E-RAB Drop Rate",
+    "definition": "Dropped bearers vs established",
+    "upper_limit": "<0.8%",
+    "lower_limit": ">1.5%"
+  },
+  {
+    "domain": "NOC",
+    "category": "Alarms",
+    "name": "Critical Alarms Count",
+    "definition": "Active critical alarms",
+    "upper_limit": "0",
+    "lower_limit": "1-5"
+  },
+  {
+    "domain": "NOC",
+    "category": "Incident",
+    "name": "MTTR",
+    "definition": "Mean time to restore",
+    "upper_limit": "<2 hrs",
+    "lower_limit": "2-4 hrs"
+  },
+  {
+    "domain": "MCX",
+    "category": "Critical Service",
+    "name": "MCPTT Setup Time",
+    "definition": "Time to establish MCPTT session",
+    "upper_limit": "<300ms",
+    "lower_limit": "300-500ms"
+  },
+  {
+    "domain": "MCX",
+    "category": "Reliability",
+    "name": "Emergency Call Success Rate",
+    "definition": "Success rate of emergency calls",
+    "upper_limit": "100%",
+    "lower_limit": ">=99%"
+  },
+  {
+    "domain": "MCX",
+    "category": "Users",
+    "name": "Online Users",
+    "definition": "Number of online/registered active MCX users",
+    "upper_limit": "Within capacity",
+    "lower_limit": "High but stable"
+  },
+  {
+    "domain": "MCX",
+    "category": "MCPTT",
+    "name": "MC Push-To-Talk Attempts",
+    "definition": "Total MCPTT call/session attempt volume (count) and rate",
+    "upper_limit": "Within capacity",
+    "lower_limit": "High but stable"
+  },
+  {
+    "domain": "MCX",
+    "category": "MCPTT",
+    "name": "MC Push-To-Talk Success",
+    "definition": "Successful MCPTT call/session establishments (count and %)",
+    "upper_limit": "\u226599.5%",
+    "lower_limit": "99.0\u201399.5%"
+  },
+  {
+    "domain": "MCX",
+    "category": "MCVideo",
+    "name": "MC Video Attempts",
+    "definition": "Total MCVideo session attempt volume (count)",
+    "upper_limit": "Within capacity",
+    "lower_limit": "High but stable"
+  },
+  {
+    "domain": "MCX",
+    "category": "MCVideo",
+    "name": "MC Video Success",
+    "definition": "Successful MCVideo session establishments (count and %)",
+    "upper_limit": "\u226599%",
+    "lower_limit": "97\u201399%"
+  },
+  {
+    "domain": "MCX",
+    "category": "MCData",
+    "name": "MC Data Attempts",
+    "definition": "Total MCData session attempt volume (count)",
+    "upper_limit": "Within capacity",
+    "lower_limit": "High but stable"
+  },
+  {
+    "domain": "MCX",
+    "category": "MCData",
+    "name": "MC Data Success",
+    "definition": "Successful MCData session establishments (count and %)",
+    "upper_limit": "\u226599%",
+    "lower_limit": "97\u201399%"
+  },
+  {
+    "domain": "MCX",
+    "category": "Access",
+    "name": "Total Number of LTE Connected Subs",
+    "definition": "Total MCX users connected via LTE access (count)",
+    "upper_limit": "Within capacity",
+    "lower_limit": "High but stable"
+  },
+  {
+    "domain": "MCX",
+    "category": "Access",
+    "name": "Total Number of WiFi Connected Subs",
+    "definition": "Total MCX users connected via WiFi access (count)",
+    "upper_limit": "Within capacity",
+    "lower_limit": "High but stable"
+  },
+  {
+    "domain": "MCX",
+    "category": "Traffic",
+    "name": "Total Traffic Volume Handled by MCX (UL+DL)",
+    "definition": "Total uplink + downlink traffic volume served by MCX platform",
+    "upper_limit": "Within capacity",
+    "lower_limit": "High but stable"
+  },
+  {
+    "domain": "MCX",
+    "category": "VoIP",
+    "name": "MC VoIP Calls Audio Success",
+    "definition": "Success rate of MCX VoIP audio calls (connected with good audio path)",
+    "upper_limit": "\u226599.5%",
+    "lower_limit": "99.0\u201399.5%"
+  },
+  {
+    "domain": "IoT",
+    "category": "Accessibility",
+    "name": "IoT Attach Success Rate",
+    "definition": "Successful IoT device attach procedures vs attempts (NB-IoT/LTE-M)",
+    "upper_limit": "\u226599%",
+    "lower_limit": "97\u201399%"
+  },
+  {
+    "domain": "IoT",
+    "category": "Performance",
+    "name": "IoT UL Message Success Rate",
+    "definition": "Successful uplink IoT data transmissions vs attempts",
+    "upper_limit": "\u226599%",
+    "lower_limit": "97\u201399%"
+  },
+  {
+    "domain": "IoT",
+    "category": "Performance",
+    "name": "IoT DL Message Success Rate",
+    "definition": "Successful downlink IoT data transmissions vs attempts",
+    "upper_limit": "\u226599%",
+    "lower_limit": "97\u201399%"
+  },
+  {
+    "domain": "IoT",
+    "category": "Radio",
+    "name": "IoT RACH Success Rate",
+    "definition": "Random Access Channel success rate for IoT devices",
+    "upper_limit": "\u226598%",
+    "lower_limit": "95\u201398%"
+  },
+  {
+    "domain": "IoT",
+    "category": "Availability",
+    "name": "IoT Device Availability",
+    "definition": "Percentage of IoT devices reachable and active in network",
+    "upper_limit": "\u226599%",
+    "lower_limit": "97\u201399%"
+  },
+  {
+    "domain": "IMS",
+    "category": "Registration",
+    "name": "SIP Registration SR",
+    "definition": "SIP registration success rate",
+    "upper_limit": ">=99%",
+    "lower_limit": "97-99%"
+  },
+  {
+    "domain": "IMS",
+    "category": "Session",
+    "name": "MO Session Connection Rate",
+    "definition": "Mobile Originated session connection success rate (call/session connected)",
+    "upper_limit": "\u226599%",
+    "lower_limit": "97\u201399%"
+  },
+  {
+    "domain": "IMS",
+    "category": "Session",
+    "name": "MT Session Connection Rate",
+    "definition": "Mobile Terminated session connection success rate (call/session connected)",
+    "upper_limit": "\u226599%",
+    "lower_limit": "97\u201399%"
+  },
+  {
+    "domain": "IMS",
+    "category": "Performance",
+    "name": "Call Setup Time (ms)",
+    "definition": "Average time from INVITE to call connected (MO/MT)",
+    "upper_limit": "<2000 ms",
+    "lower_limit": "2000\u20133000"
+  },
+  {
+    "domain": "IMS",
+    "category": "Retainability",
+    "name": "Call Drop Rate of IMS",
+    "definition": "IMS call drop ratio (abnormal releases)",
+    "upper_limit": "<0.8%",
+    "lower_limit": "0.8\u20131.5%"
+  },
+  {
+    "domain": "IMS",
+    "category": "Traffic",
+    "name": "Total Traffic (MO+MT) (Erl)",
+    "definition": "Total carried traffic in Erlangs (MO+MT) per day",
+    "upper_limit": "Within capacity",
+    "lower_limit": "High but stable"
+  },
+  {
+    "domain": "IMS",
+    "category": "Capacity",
+    "name": "Registered Users",
+    "definition": "number of users registered in IMS",
+    "upper_limit": "Within capacity",
+    "lower_limit": "High but stable"
+  },
+  {
+    "domain": "Executive",
+    "category": "Availability",
+    "name": "End-to-End Availability",
+    "definition": "Overall service uptime across RAN, Transport, Core, IMS, MCX",
+    "upper_limit": ">=99.95%",
+    "lower_limit": "99.5-99.95%"
+  },
+  {
+    "domain": "Executive",
+    "category": "SLA",
+    "name": "SLA Compliance",
+    "definition": "Daily SLA achievement vs contracted SLA",
+    "upper_limit": ">=99.5%",
+    "lower_limit": "98-99.5%"
+  },
+  {
+    "domain": "Cybersecurity",
+    "category": "Security",
+    "name": "DDoS Attacks Detected",
+    "definition": "Number of DDoS attacks detected",
+    "upper_limit": "0 successful",
+    "lower_limit": "Blocked only"
+  },
+  {
+    "domain": "Core (PS)",
+    "category": "Accessibility",
+    "name": "Attach Success Rate",
+    "definition": "Successful attaches vs attempts",
+    "upper_limit": ">=99%",
+    "lower_limit": "97-99%"
+  },
+  {
+    "domain": "Core (PS)",
+    "category": "Load",
+    "name": "Utilization",
+    "definition": "utilization",
+    "upper_limit": "<75%",
+    "lower_limit": "75-85%"
+  },
+  {
+    "domain": "Core (PS)",
+    "category": "Accessibility",
+    "name": "Service Request Success Rate",
+    "definition": "Successful service requests vs attempts",
+    "upper_limit": "\u226599%",
+    "lower_limit": "97\u201399%"
+  },
+  {
+    "domain": "Core (PS)",
+    "category": "Accessibility",
+    "name": "Paging Success Rate",
+    "definition": "Successful paging responses vs paging attempts",
+    "upper_limit": "\u226599%",
+    "lower_limit": "97\u201399%"
+  },
+  {
+    "domain": "Core (PS)",
+    "category": "Accessibility",
+    "name": "EPS Bearer Setup Success Rate",
+    "definition": "Successful default/dedicated bearer setups vs attempts",
+    "upper_limit": "\u226599%",
+    "lower_limit": "97\u201399%"
+  },
+  {
+    "domain": "Core (PS)",
+    "category": "Retainability",
+    "name": "EPS Bearer Drop Rate",
+    "definition": "Abnormal EPS bearer releases vs total bearers",
+    "upper_limit": "<0.8%",
+    "lower_limit": "0.8\u20131.5%"
+  },
+  {
+    "domain": "BSS/OSS",
+    "category": "Provisioning",
+    "name": "Provisioning Success Rate",
+    "definition": "Successful provisioning orders",
+    "upper_limit": ">=99%",
+    "lower_limit": "97-99%"
+  },
+  {
+    "domain": "BSS/OSS",
+    "category": "Network",
+    "name": "Network Trouble Tickets Open",
+    "definition": "Open Network tickets",
+    "upper_limit": "Stable",
+    "lower_limit": "Flat"
+  },
+  {
+    "domain": "BSS/OSS",
+    "category": "Customer",
+    "name": "Customer Trouble Tickets Open",
+    "definition": "Open customer tickets",
+    "upper_limit": "Stable",
+    "lower_limit": "Flat"
+  }
+]
