@@ -137,7 +137,31 @@ def parse_limit_rules(excel_path=EXCEL_PATH):
             'warning_range': warning_range
         }
 
+    # Custom overrides based on operational feedback
+    kpi_rules['total_number_of_wifi_connected_subs'] = {
+        'kpi_name': 'Total Number of WiFi Connected Subs',
+        'upper_text': '~100',
+        'lower_text': '<80',
+        'healthy_range': (95.0, 105.0),
+        'warning_range': (80.0, 95.0)
+    }
+    kpi_rules['total_number_of_lte_connected_subs'] = {
+        'kpi_name': 'Total Number of LTE Connected Subs',
+        'upper_text': '~2790',
+        'lower_text': '<2500',
+        'healthy_range': (2700.0, 2880.0),
+        'warning_range': (2500.0, 2700.0)
+    }
+    kpi_rules['online_users'] = {
+        'kpi_name': 'Online Users',
+        'upper_text': '~1100',
+        'lower_text': '<950',
+        'healthy_range': (1050.0, 1150.0),
+        'warning_range': (950.0, 1050.0)
+    }
+
     return kpi_rules
+
 
 if __name__ == "__main__":
     rules = parse_limit_rules()
