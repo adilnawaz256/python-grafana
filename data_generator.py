@@ -154,10 +154,24 @@ class DataGenerator:
                     row_data[col_name] = round(val, 4)
 
 
-            else:
-                row_data[col_name] = None
+        # Post-processing ratio adjustments for Grafana calculated fields
+        if "mc_push_to_talk_attempts" in row_data and row_data["mc_push_to_talk_attempts"]:
+            attempts = float(row_data["mc_push_to_talk_attempts"])
+            if attempts > 0:
+                row_data["mc_push_to_talk_success"] = round(attempts * random.uniform(0.975, 0.990), 2)
+
+        if "mc_video_attempts" in row_data and row_data["mc_video_attempts"]:
+            v_attempts = float(row_data["mc_video_attempts"])
+            if v_attempts > 0:
+                row_data["mc_video_success"] = round(v_attempts * random.uniform(0.975, 0.990), 2)
+
+        if "mc_data_attempts" in row_data and row_data["mc_data_attempts"]:
+            d_attempts = float(row_data["mc_data_attempts"])
+            if d_attempts > 0:
+                row_data["mc_data_success"] = round(d_attempts * random.uniform(0.975, 0.990), 2)
 
         return row_data
+
 
     def generate_batch(self, table_name: str, count: int = 1, schema: str = "public", include_pk: bool = True):
         """Generates a batch of rows advancing timestamps sequentially."""
