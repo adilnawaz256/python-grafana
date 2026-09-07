@@ -180,6 +180,14 @@ def parse_limit_rules(excel_path=EXCEL_PATH):
         'healthy_range': (2700.0, 2880.0),
         'warning_range': (2500.0, 2700.0)
     }
+    kpi_rules['mc_push_to_talk_success'] = {
+        'kpi_name': 'MC Push-To-Talk Success / PTT SR',
+        'upper_text': '97–99%',
+        'lower_text': '<95%',
+        'healthy_range': (97.0, 99.0),
+        'warning_range': (95.0, 97.0)
+    }
+
 
     return kpi_rules
 
