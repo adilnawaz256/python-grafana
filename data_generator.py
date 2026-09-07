@@ -133,7 +133,8 @@ class DataGenerator:
                     std_adj = max(std_val * self.noise_factor, 0.05)
                     val = float(np.random.normal(loc=base_val, scale=std_adj))
 
-                    if any(kw in col_name.lower() for kw in ["success_rate", "availability", "utilization", "_prb", "_cpu", "memory", "sr"]):
+                    is_rate_col = any(kw in col_name.lower() for kw in ["rate", "availability", "utilization", "_prb", "_cpu", "memory", "sr", "ratio", "compliance"])
+                    if is_rate_col:
                         if min_val >= 90.0:
                             val = max(95.0, min(100.0, val))
                         else:
@@ -143,7 +144,8 @@ class DataGenerator:
                         val = max(0.0, val)
 
                     else:
-                        val = max(min_val, min(max_val * 1.05, val))
+                        val = max(min_val, val)
+
 
                 is_count_col = any(kw in col_name.lower() for kw in ["count", "alarm", "sites", "cells", "down", "tickets", "users", "subs", "attempts", "incidents", "flaps"])
                 if data_type in ("bigint", "integer", "smallint") or is_count_col:
