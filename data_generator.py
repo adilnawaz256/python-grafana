@@ -154,8 +154,10 @@ class DataGenerator:
                     row_data[col_name] = round(val, 4)
 
 
-        # Post-processing ratio & fixed field adjustments
-        row_data["ran_active_alarms"] = 738
+        # Post-processing ratio & fixed field adjustments per client WhatsApp instructions (650-700 range)
+        row_data["ran_active_alarms"] = 680
+        row_data["affected_sites"] = 432
+
 
         if "mc_push_to_talk_attempts" in row_data and row_data["mc_push_to_talk_attempts"]:
             attempts = float(row_data["mc_push_to_talk_attempts"])
