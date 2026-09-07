@@ -158,7 +158,8 @@ class DataGenerator:
         if "mc_push_to_talk_attempts" in row_data and row_data["mc_push_to_talk_attempts"]:
             attempts = float(row_data["mc_push_to_talk_attempts"])
             if attempts > 0:
-                row_data["mc_push_to_talk_success"] = round(attempts * random.uniform(0.970, 0.990), 2)
+                row_data["mc_push_to_talk_success"] = round(attempts * random.uniform(0.996, 0.998), 2)
+
 
 
         if "mc_video_attempts" in row_data and row_data["mc_video_attempts"]:
