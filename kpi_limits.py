@@ -137,7 +137,35 @@ def parse_limit_rules(excel_path=EXCEL_PATH):
             'warning_range': warning_range
         }
 
-    # Custom overrides based on operational feedback
+    # Custom overrides based on operational feedback & client WhatsApp specification
+    kpi_rules['online_users'] = {
+        'kpi_name': 'Online Users',
+        'upper_text': '~2910',
+        'lower_text': '<2500',
+        'healthy_range': (2850.0, 2950.0),
+        'warning_range': (2500.0, 2850.0)
+    }
+    kpi_rules['ran_active_alarms'] = {
+        'kpi_name': 'Live Nodes / RAN Active Alarms',
+        'upper_text': '~738',
+        'lower_text': '<700',
+        'healthy_range': (730.0, 745.0),
+        'warning_range': (700.0, 730.0)
+    }
+    kpi_rules['site_down'] = {
+        'kpi_name': 'Site Down',
+        'upper_text': '0',
+        'lower_text': '1-3',
+        'healthy_range': (0.0, 0.0),
+        'warning_range': (1.0, 3.0)
+    }
+    kpi_rules['critical_alarms_count'] = {
+        'kpi_name': 'Critical Alarms Count',
+        'upper_text': '0',
+        'lower_text': '1-4',
+        'healthy_range': (0.0, 0.0),
+        'warning_range': (1.0, 4.0)
+    }
     kpi_rules['total_number_of_wifi_connected_subs'] = {
         'kpi_name': 'Total Number of WiFi Connected Subs',
         'upper_text': '~100',
@@ -152,15 +180,9 @@ def parse_limit_rules(excel_path=EXCEL_PATH):
         'healthy_range': (2700.0, 2880.0),
         'warning_range': (2500.0, 2700.0)
     }
-    kpi_rules['online_users'] = {
-        'kpi_name': 'Online Users',
-        'upper_text': '~1100',
-        'lower_text': '<950',
-        'healthy_range': (1050.0, 1150.0),
-        'warning_range': (950.0, 1050.0)
-    }
 
     return kpi_rules
+
 
 
 if __name__ == "__main__":
