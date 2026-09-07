@@ -145,10 +145,12 @@ class DataGenerator:
                     else:
                         val = max(min_val, min(max_val * 1.05, val))
 
-                if data_type in ("bigint", "integer", "smallint"):
+                is_count_col = any(kw in col_name.lower() for kw in ["count", "alarm", "sites", "cells", "down", "tickets", "users", "subs", "attempts", "incidents", "flaps"])
+                if data_type in ("bigint", "integer", "smallint") or is_count_col:
                     row_data[col_name] = int(round(val))
                 else:
                     row_data[col_name] = round(val, 4)
+
 
             else:
                 row_data[col_name] = None
