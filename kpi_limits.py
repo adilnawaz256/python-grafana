@@ -149,9 +149,10 @@ def parse_limit_rules(excel_path=EXCEL_PATH):
         'kpi_name': 'Live Nodes / RAN Active Alarms',
         'upper_text': '738',
         'lower_text': '<700',
-        'healthy_range': (735.0, 740.0),
-        'warning_range': (700.0, 735.0)
+        'healthy_range': (738.0, 738.0),
+        'warning_range': (700.0, 738.0)
     }
+
 
 
     kpi_rules['site_down'] = {
